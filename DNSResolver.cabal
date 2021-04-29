@@ -1,0 +1,104 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 5016005b1b3433c344657a659a7cca157078534eb04999ad4c51dd9615da6189
+
+name:           DNSResolver
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/DNSResolver#readme>
+homepage:       https://github.com/githubuser/DNSResolver#readme
+bug-reports:    https://github.com/githubuser/DNSResolver/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2021 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/DNSResolver
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_DNSResolver
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , bytestring
+    , containers
+    , dns
+    , exceptions
+    , hourglass
+    , iproute
+    , mtl
+    , network
+    , pretty-simple
+    , random
+    , text
+  default-language: Haskell2010
+
+executable DNSResolver-exe
+  main-is: Main.hs
+  other-modules:
+      MonadBind
+      MonadConnect
+      MonadDebug
+      MonadIOError
+      MonadStorage
+      Network
+      QueryResponse
+      Time
+      Utils
+      Paths_DNSResolver
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      DNSResolver
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , dns
+    , exceptions
+    , hourglass
+    , iproute
+    , mtl
+    , network
+    , pretty-simple
+    , random
+    , text
+  default-language: Haskell2010
+
+test-suite DNSResolver-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_DNSResolver
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      DNSResolver
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , dns
+    , exceptions
+    , hourglass
+    , iproute
+    , mtl
+    , network
+    , pretty-simple
+    , random
+    , text
+  default-language: Haskell2010
